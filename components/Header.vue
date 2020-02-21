@@ -1,6 +1,13 @@
 <template>
   <header>
-    <img src="../assets/logo.svg" />
+    <a
+      id="vue-link"
+      href="https://vuejs.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/logo.svg"
+    /></a>
     <ul class="header-list">
       <li>
         <a href="http://www.vg.no" target="_blank" rel="noopener noreferrer">
@@ -34,6 +41,9 @@ export default {};
 </script>
 
 <style scoped>
+#vue-link {
+  display: flex;
+}
 header {
   top: 0;
   position: fixed;
@@ -55,6 +65,12 @@ header {
 .header-list > li > a {
   font-weight: 700;
   text-decoration: none;
-  color: #1e1e24;
+  color: hsl(240, 9%, 13%);
+  border-bottom: hidden hsl(240, 9%, 13%) solid;
+  transition: 0.5s;
+}
+.header-list > li > a:hover {
+  font-size: 1.3rem;
+  border-bottom: 1px solid hsl(240, 9%, 13%);
 }
 </style>

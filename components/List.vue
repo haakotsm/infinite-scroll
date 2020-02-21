@@ -29,14 +29,10 @@ export default {
   methods: {
     async intersected() {
       const res = await fetch(
-        `https://jsonplaceholder.typicode.com/posts?_page=${this.page}&_limit=50`
+        `https://jsonplaceholder.typicode.com/posts?_page=${this.page}&_limit=10`
       );
-      // eslint-disable-next-line
-      console.log(res);
-      this.page++;
       const items = await res.json();
-      // eslint-disable-next-line
-      console.log(items);
+      this.page += items.length > 0 ? 1 : 0;
       this.items = [...this.items, ...items];
     }
   }
